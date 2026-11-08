@@ -1,0 +1,73 @@
+/* Sample Shop — fictional demo page for WebFill screenshots. System fonts only, no external resources. */
+:root {
+  --bg: #FAF8F4;
+  --ink: #1E1E22;
+  --muted: #6B6B74;
+  --line: #E6E2DA;
+  --card: #FFFFFF;
+  --accent: #2F6F8F;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.site-header__brand { margin: 0; font-weight: 700; font-size: 20px; letter-spacing: .02em; }
+.site-header__nav { display: flex; gap: 24px; color: var(--muted); font-size: 15px; }
+.page { max-width: 1240px; margin: 0 auto; padding: 36px 40px 64px; }
+.intro { margin-bottom: 28px; }
+.intro__title { margin: 0 0 6px; font-size: 34px; line-height: 1.15; letter-spacing: -.01em; }
+.intro__lead { margin: 0; color: var(--muted); font-size: 17px; }
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card__link { display: block; line-height: 0; }
+.card__image { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.card__body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.card__title { margin: 0; font-size: 18px; line-height: 1.3; font-weight: 600; }
+.card__price { margin: 0; font-size: 17px; font-weight: 700; color: var(--accent); }
+.card__desc { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.site-footer { padding: 24px 40px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; text-align: center; }
+.site-footer p { margin: 0; }
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page { padding: 28px 28px 56px; }
+  .site-header, .site-footer { padding-left: 28px; padding-right: 28px; }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; gap: 18px; }
+  .page { padding: 20px 16px 48px; }
+  .site-header { padding: 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .site-header__nav { gap: 16px; font-size: 14px; flex-wrap: wrap; }
+  .site-footer { padding: 20px 16px 32px; }
+  .intro__title { font-size: 28px; }
+}
